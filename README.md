@@ -18,7 +18,7 @@ certain number of messaging forums. The peer client polls the server on a regula
 tasks which relate to those particular messaging forums. If it is the 1st node able to respond, the task becomes
 locked, and is removed from the server.
 
-This is a large database sharding style effort, where 3 or 4 peers each contain the data for particular forums,
+This is a large database-style 'sharding' effort, where 3 or 4 peers each contain the data for particular forums,
 but no more. It effectively allows a multi-read / multi-write messaging database to a large scale.
 
 The server maintains a global current message ID, so that new read / write requests will always correspond to the right
