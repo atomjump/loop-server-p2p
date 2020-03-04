@@ -36,3 +36,4 @@ since it is only a small rotating cache, the RAM table should allow overall syst
 The server is responsible for balancing the load across each peer, and adapting this for busy forums, inviting new peers
 in when necessary to forums.
 
+Create user requests are shared to all nodes, and the user database is complete on all nodes.
