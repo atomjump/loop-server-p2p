@@ -37,3 +37,39 @@ The server is responsible for balancing the load across each peer, and adapting 
 in when necessary to forums.
 
 Create user requests are shared to all nodes, and the user database is complete on all nodes.
+
+
+
+# Sample read requests
+
+https://atomjump.com/api/search-secure.php?width=1322&height=302&uniqueFeedbackId=ajps_test&myMachineUser=92.27.10.17:8&cssFeedback=https%3A%2F%2Fatomjump.com%2Fcss%2Fcomments-1.0.4.css&cssBootstrap=https%3A%2F%2Fatomjump.com%2Fcss%2Fbootstrap.min.css&server=https%3A%2F%2Fatomjump.com%2Fapi&clientremoteurl=https%3A%2F%2Ftest.atomjump.com%2F
+
+https://atomjump.com/api/logged-status.php?callback=jQuery111001906744773801886_1583350777474&passcode=ajps_test&email_modified=false&your-name-opt=&email-opt=&pd=&ph=&lang=en&users=&subscriberlimit=&setforumpassword=&forumpasscheck=&setforumtitle=test%40&_=1583350777475
+
+
+https://fast.atomjump.com/search-chat.php?callback=jQuery111001906744773801886_1583350777476&lat=&lon=&passcode=ajps_test&units=mi&volume=1&records=25&whisper_site=92.27.10.17%3A8&sessionId=1p9nltbl2j449h1tv7a3f4tks3&_=1583350777477
+
+
+From these requests
+uniqueFeedbackId
+passcode
+both hold the forum name (ajps_test in this case).
+The 3rd request is to the NodeJS server (whereby the fast.atomjump.com gets rerouted to the correct port number).
+
+
+# Sample write requests
+
+https://atomjump.com/api/index.php?callback=jQuery111007185678883165553_1583350964824&action=ssshout&lat=&lon=&whisper_to=&whisper_site=&your_name=&passcode=ajps_test&reading=&remoteapp=true&clientremoteurl=https%3A%2F%2Ftest.atomjump.com%2F&remoteurl=https%253A%252F%252Fatomjump.com%252Fapi%252Fsearch-secure.php%253Fwidth%253D1322%2526height%253D302%2526uniqueFeedbackId%253Dajps_test%2526myMachineUser%253D92.27.10.17%253A8%2526cssFeedback%253Dhttps%25253A%25252F%25252Fatomjump.com%25252Fcss%25252Fcomments-1.0.4.css%2526cssBootstrap%253Dhttps%25253A%25252F%25252Fatomjump.com%25252Fcss%25252Fbootstrap.min.css%2526server%253Dhttps%25253A%25252F%25252Fatomjump.com%25252Fapi%2526clientremoteurl%253Dhttps%25253A%25252F%25252Ftest.atomjump.com%25252F&units=mi&short_code=&public_to=&volume=1.00&ses=1p9nltbl2j449h1tv7a3f4tks3&cs=21633478&typing=on&shout_id=&msg_id=1&message=S&email=&phone=&shouted=S&_=1583350964826
+
+
+
+https://atomjump.com/api/index.php?callback=jQuery111007185678883165553_1583350964822&action=ssshout&lat=&lon=&whisper_to=&whisper_site=92.27.10.17%3A8&your_name=&passcode=ajps_test&reading=&remoteapp=true&clientremoteurl=https%3A%2F%2Ftest.atomjump.com%2F&remoteurl=https%253A%252F%252Fatomjump.com%252Fapi%252Fsearch-secure.php%253Fwidth%253D1322%2526height%253D302%2526uniqueFeedbackId%253Dajps_test%2526myMachineUser%253D92.27.10.17%253A8%2526cssFeedback%253Dhttps%25253A%25252F%25252Fatomjump.com%25252Fcss%25252Fcomments-1.0.4.css%2526cssBootstrap%253Dhttps%25253A%25252F%25252Fatomjump.com%25252Fcss%25252Fbootstrap.min.css%2526server%253Dhttps%25253A%25252F%25252Fatomjump.com%25252Fapi%2526clientremoteurl%253Dhttps%25253A%25252F%25252Ftest.atomjump.com%25252F&units=mi&short_code=&public_to=&volume=1.00&ses=1p9nltbl2j449h1tv7a3f4tks3&cs=21633478&typing=off&shout_id=912394&msg_id=1&message=Starting+to+type%0D%0A&email=&phone=&shouted=&_=1583350964829
+
+
+The 1st request is on starting to type, and the 2nd request is on conclusion of typing.
+action=ssshout
+message=the actual message being sent for writing
+
+
+Now: the ses value is the session, which also has to be global.
+
