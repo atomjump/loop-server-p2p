@@ -38,6 +38,8 @@ in when necessary to forums.
 
 Create user requests are shared to all nodes, and the user database is complete on all nodes.
 
+Sessions: on an update to a session record on one peer, a message is sent to the server in relation to that
+forum, only. When a request goes for processing from that forum, the session update is also implemented on the peer, first.
 
 
 # Sample read requests
