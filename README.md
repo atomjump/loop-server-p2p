@@ -42,7 +42,7 @@ Sessions: on an update to a session record on one peer, a session update message
 forum and user, only. When a request goes for processing from that forum & user, the session update is also implemented on the peer, first, if there are any session updates for that forum.
 
 
-# Sample read requests
+## Sample read requests
 
 These must be routed to the correct peer based on the forum name.
 
@@ -64,7 +64,7 @@ both hold the forum name (ajps_test in this case).
 The 3rd request is to the NodeJS server (whereby the fast.atomjump.com gets rerouted to the correct port number).
 
 
-# Sample write requests
+## Sample write requests
 
 These must be routed to the correct peer based on the forum name.
 
@@ -85,7 +85,7 @@ Also shout_id=912394
 is the global message id. It is not there in the 1st request because a new message is being created.
 
 
-# Sample static requests
+## Sample static requests
 
 These can be handled by any peer e.g. image, js or CSS files.
 
@@ -93,7 +93,7 @@ https://atomjump.com/api/plugins/emoticons_large/icons/art/face1.png
 https://atomjump.com/analytics/piwik/piwik.js
 
 
-# Global dynamic images
+## Global dynamic images
 
 On atomjump.com, we have these from a different subdomain, which potentially could be targeted to an existing
 image CDN, but we may want to be able to handle this with the P2P structure too in future.
