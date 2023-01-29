@@ -1,4 +1,7 @@
 # loop-server-p2p
+
+__WARNING: this project has now moved to https://src.atomjump.com/atomjump/loop-server-p2p.git__
+
 A P2P add-on to the AtomJump Messaging server
 
 
